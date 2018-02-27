@@ -14,17 +14,19 @@
 
 
 <h3> Add Employee to Any of The Following Projects: </h3>
-
-<form action="/employees/<%= @employee.id() %>" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <div class="form-group">
-    <select name="project_id">
-      <% @projects.each do |project| %>
-        <option value="<%= project.id %>"><%= project.title %></option>
-      <% end %>
-    </select>
-  </div>
-  <button type="submit" class="button btn-success">Add Project to Employee</button>
-</form>
-
+<% if @available_projects.any? %>
+  <form action="/employees/<%= @employee.id() %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <div class="form-group">
+      <select name="project_id">
+        <% @available_projects.each do |project| %>
+          <option value="<%= project.id %>"><%= project.title %></option>
+        <% end %>
+      </select>
+    </div>
+    <button type="submit" class="button btn-success">Add Project to Employee</button>
+  </form>
+<% else %>
+  <h4>You are already assigned to every project. You must be a real workhorse </h4>
+<% end %>
 <p><a href="/">Return to Home</a></p>

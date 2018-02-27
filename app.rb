@@ -63,7 +63,7 @@ end
 
 get('/employees/:id')do
   @employee = Employee.find(params.fetch("id").to_i)
-  @projects = Project.all()
+  @available_projects = Project.all() - @employee.projects
   erb(:employee)
 end
 
@@ -71,6 +71,6 @@ patch('/employees/:id')do
   @employee = Employee.find(params.fetch("id").to_i)
   new_project = Project.find(params.fetch("project_id"))
   @employee.projects.push(new_project)
-  @projects = Project.all()
+  @available_projects = Project.all() - @employee.projects
   erb(:employee)
 end
