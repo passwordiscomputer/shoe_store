@@ -1,0 +1,17 @@
+<h2>Welcome to the Projects Page</h2>
+
+<% if @projects.any?() %>
+
+  <ul>
+    <% @projects.each do |project| %>
+    <li><a href="projects/<%= project.id() %>"><%= project.title() %></a></li>
+    <% end %>
+  </ul>
+
+  <% else %>
+    <p>There are no projects yet!</p>
+  <% end %>
+
+<div class="container">
+  <p><a href="/">Return to Home</a></p>
+</div>

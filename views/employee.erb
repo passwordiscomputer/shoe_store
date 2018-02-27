@@ -1,0 +1,22 @@
+<h2><%= @employee.name %> </h2>
+
+<h3> Current Projects </h3>
+
+<% if @employee.projects.any? %>
+  <ul>
+    <% @employee.projects.each do |project| %>
+      <li><%= project.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h4>This employee is not assigned to any projects</h4>
+<% end %>
+
+<form action="employees/<%= employee.id() %>" method="post">
+  <div class="form-group">
+    <label class="form-label" for='title'>Project Title:</label>
+    <input class="form-control" id='title' name='title' type='text'>
+    </br>
+    <button type="submit" class="button btn-success">Create Project!</button>
+  </div>
+</form>
