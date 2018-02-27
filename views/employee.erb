@@ -9,14 +9,22 @@
     <% end %>
   </ul>
 <% else %>
-  <h4>This employee is not assigned to any projects</h4>
+  <h4>This employee is not assigned to any projects.</h4>
 <% end %>
 
-<form action="employees/<%= employee.id() %>" method="post">
+
+<h3> Add Employee to Any of The Following Projects: </h3>
+
+<form action="/employees/<%= @employee.id() %>" method="post">
+  <input type="hidden" name="_method" value="patch">
   <div class="form-group">
-    <label class="form-label" for='title'>Project Title:</label>
-    <input class="form-control" id='title' name='title' type='text'>
-    </br>
-    <button type="submit" class="button btn-success">Create Project!</button>
+    <select name="project_id">
+      <% @projects.each do |project| %>
+        <option value="<%= project.id %>"><%= project.title %></option>
+      <% end %>
+    </select>
   </div>
+  <button type="submit" class="button btn-success">Add Project to Employee</button>
 </form>
+
+<p><a href="/">Return to Home</a></p>

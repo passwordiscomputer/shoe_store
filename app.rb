@@ -34,6 +34,20 @@ post('/projects') do
   erb(:projects)
 end
 
+get('/projects/:id') do
+  @project = Project.find(params.fetch("id").to_i())
+  @employees = Employee.all()
+  erb(:project)
+end
+
+patch('/projects/:id')do
+  @project = Project.find(params.fetch("id").to_i)
+  new_employee = Employee.find(params.fetch("employee_id"))
+  @project.employees.push(new_employee)
+  @employees = Employee.all()
+  erb(:project)
+end
+
 get('/employees') do
   @employees = Employee.all()
   erb(:employees)
@@ -50,6 +64,13 @@ end
 get('/employees/:id')do
   @employee = Employee.find(params.fetch("id").to_i)
   @projects = Project.all()
-  binding.pry
+  erb(:employee)
+end
+
+patch('/employees/:id')do
+  @employee = Employee.find(params.fetch("id").to_i)
+  new_project = Project.find(params.fetch("project_id"))
+  @employee.projects.push(new_project)
+  @projects = Project.all()
   erb(:employee)
 end
