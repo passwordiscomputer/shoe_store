@@ -16,7 +16,6 @@
 <h3> Add Employee to Any of The Following Projects: </h3>
 <% if @available_projects.any? %>
   <form action="/employees/<%= @employee.id() %>" method="post">
-    <input type="hidden" name="_method" value="patch">
     <div class="form-group">
       <select name="project_id">
         <% @available_projects.each do |project| %>
@@ -29,4 +28,5 @@
 <% else %>
   <h4>You are already assigned to every project. You must be a real workhorse </h4>
 <% end %>
+<p><a href="/employees/<%= @employee.id() %>/edit">Edit Employee</a></p>
 <p><a href="/">Return to Home</a></p>
