@@ -1,6 +1,6 @@
-<h2><%= @employee.name %> </h2>
+<h2>Employee: <%= @employee.name %> </h2>
 
-<h3> Current Projects </h3>
+<h4>Current projects available to team member:</h4>
 
 <% if @employee.projects.any? %>
   <ul>
@@ -9,11 +9,11 @@
     <% end %>
   </ul>
 <% else %>
-  <h4>This employee is not assigned to any projects.</h4>
+  <p>This employee is not assigned to any projects.</p>
 <% end %>
 
 
-<h3> Add Employee to Any of The Following Projects: </h3>
+<h4>Add <%= @employee.name %> to any of these projects:</h4>
 <% if @available_projects.any? %>
   <form action="/employees/<%= @employee.id() %>" method="post">
     <div class="form-group">
@@ -25,8 +25,10 @@
     </div>
     <button type="submit" class="button btn-success">Add Project to Employee</button>
   </form>
+
 <% else %>
-  <h4>You are already assigned to every project. You must be a real workhorse </h4>
+  <h4>You are already assigned to every project. You must be a real workhorse.</h4>
 <% end %>
+
+<br>
 <p><a href="/employees/<%= @employee.id() %>/edit">Edit Employee</a></p>
-<p><a href="/">Return to Home</a></p>

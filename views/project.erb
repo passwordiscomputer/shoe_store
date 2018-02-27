@@ -1,6 +1,6 @@
-<h2><%= @project.title %></h2>
+<h2>Project: <%= @project.title %></h2>
 
-<h3>Current Employees</h3>
+<h4>Current team members on this project:</h4>
 
 <% if @project.employees.any? %>
   <ul>
@@ -9,10 +9,10 @@
     <% end %>
   </ul>
 <% else %>
-  <h4>This project is not assigned to any employees.</h4>
+  <p>This project is not assigned to any employees.</p>
 <% end %>
 
-<h3>Add Project to Any of The Following Employees</h3>
+<h4>Add new team members to this project:</h4>
 
 <form action="/projects/<%= @project.id() %>" method="post">
   <div class="form-group">
@@ -25,5 +25,5 @@
   <button type="submit" class="button btn-success">Add Employee to Project</button>
 </form>
 
+<br>
 <p><a href="/projects/<%= @project.id() %>/edit">Edit Project</a></p>
-<p><a href="/">Return to Home</a></p>

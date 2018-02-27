@@ -10,7 +10,6 @@ require("pry")
 get('/') do
   @employees = Employee.all()
   @projects = Project.all()
-  binding.pry
   erb(:home)
 end
 
@@ -93,6 +92,7 @@ post('/employees/:id')do
   new_project = Project.find(params.fetch("project_id"))
   @employee.projects.push(new_project)
   @available_projects = Project.all() - @employee.projects
+  assignment = Assignment.where()
   erb(:employee)
 end
 
