@@ -22,14 +22,22 @@ body{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
+  border-bottom: 2px #837F8A solid;
 }
 
-.navbar1 h3 a{
+a{
   color: #837F8A;
 }
 
 ul {
   list-style: none;
+}
+li a{
+  font-size: 18px;
+}
+
+li{
+  margin-top: 8px;
 }
 
 h2 {
