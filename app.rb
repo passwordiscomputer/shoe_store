@@ -39,7 +39,9 @@ end
 #######ADD TO LISTS############
 ##brand##
 post('/add_brand')do
-  if Brand.create(params)
+binding.pry
+  if Brand.create({:name => params[:name], :price => params[:price]})
+    Brand.create({:name => params[:name], :price => params[:price]})
     redirect('/')
   else
     erb(:error)

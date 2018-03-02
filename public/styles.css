@@ -27,15 +27,17 @@ body{
 
 }
 
-a{
+.navbar1 a{
   color: #F5B23E;
 }
 
 ul {
   list-style: none;
+  padding: 0px;
 }
 li a{
   font-size: 18px;
+  color: #1F292B;
 }
 
 li{
@@ -59,6 +61,14 @@ h2 {
 }
 
 .main-content{
+  color: #1F292B;
   margin-top: 15px;
   text-align: center;
+}
+.main-content h3{
+  text-decoration: underline;
+}
+
+input{
+  margin: 4px;
 }
