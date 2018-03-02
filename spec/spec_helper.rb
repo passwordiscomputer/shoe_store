@@ -4,6 +4,7 @@ require("rspec")
 require("sinatra/activerecord")
 require("brand")
 require("store")
+require "pry"
 
 RSpec.configure do |config|
   config.after(:each) do

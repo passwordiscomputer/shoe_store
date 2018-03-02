@@ -3,11 +3,17 @@ class Brand < ActiveRecord::Base
   before_validation(:capitalize_name)
   validates(:name, presence: true)
   validates( :name, uniqueness: true)
+  before_save(:currency_convert)
+
 
 
    private
 
    def capitalize_name
      self.name=(name().capitalize())
+   end
+
+   def currency_convert
+     self.price = "$#{price.to_s}.00"
    end
 end
