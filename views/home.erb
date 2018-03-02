@@ -1,1 +1,35 @@
-<h1>Welcome to the Home Page. Lets Boogie</h1>
+<div class=" main-content row">
+  <h1>Welcome Home</h1>
+</div>
+
+
+
+  <div class="main-content row">
+    <div id="" class="col-xs-5 col-xs-offset-1">
+      <div class="well">
+        <h3>Add Store</h3>
+      </div>
+    </div>
+    <div id="" class="col-xs-5">
+      <div class="well">
+        <h3>Add Store</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="" class="col-xs-5 col-xs-offset-1">
+      <div class="well">
+        <h3>locations</h3>
+          <ul>
+            <% @stores.each do |store| %>
+              <li><a href="/stores/<%= store.id %>"></a></li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+    <div id="" class="col-xs-5">
+      <div class="well">
+        <h3>inventory</h3>
+      </div>
+    </div>
+  </div>
