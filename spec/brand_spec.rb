@@ -17,7 +17,11 @@ describe('Brand') do
   it("ensures the brand name is unique") do
     brand1 = Brand.new({:name => "Big Dogs"})
     brand2 = Brand.new({:name => "Big Dogs"})
-    brand1.save()    
+    brand1.save()
     expect(brand2.save()).to(eq(false))
+  end
+  it("saves the brand name with a capital letter") do
+    brand = Brand.create({:name => "nike"})
+    expect(brand.name).to(eq("Nike"))
   end
 end
