@@ -65,7 +65,7 @@ h2 {
   margin-top: 15px;
   text-align: center;
 }
-.main-content h3{
+.main-content well h3{
   text-decoration: underline;
 }
 
@@ -76,4 +76,8 @@ input{
 .form-control {
   background-color: #FCFCFC;
   border: 1px solid #FCFCFC;
+}
+
+.top h3{
+  color: #CFC7CA;
 }

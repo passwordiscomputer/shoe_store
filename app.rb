@@ -28,11 +28,15 @@ end
 #Individual Brand Page
 get('/brands/:id')do
   @brand = Brand.find(params[:id])
+  @stores = (Store.all) - @brand.stores
+  erb(:brand)
 end
 
 #Individual Brand Page
 get('/stores/:id')do
   @store = Store.find(params[:id])
+  @brands = (Brand.all) - @store.brands
+  erb(:store)
 end
 
 
@@ -49,11 +53,36 @@ binding.pry
 end
 ##Store##
 post('/add_store')do
-
   if Store.create({:name => params[:name]})
     Store.create({:name => params[:name]})
     redirect('/')
   else
     erb(:error)
   end
+end
+
+#####SHIP SHOES#####
+
+#SHIP BRAND TO STORE##
+
+post('/brands/:id')do
+  @brand = Brand.find(params[:id])
+  store_ids = params['store_ids'] || [] # 'or' statement, returns empty array if no stores checked
+  store_ids.each do |store_id|
+    store = Store.find(store_id)
+    @brand.stores.push(store)
+  end
+  @link = "/brands/#{@brand.id}"
+  redirect(@link)
+end
+##Order brand into sr
+post('/stores/:id')do
+  @store = Store.find(params[:id])
+  brand_ids = params['brand_ids'] || [] # 'or' statement, returns empty array if no brands checked
+  brand_ids.each do |brand_id|
+    brand = Brand.find(brand_id)
+    @store.brands.push(brand)
+  end
+  @link = "/stores/#{@store.id}"
+  redirect(@link)
 end

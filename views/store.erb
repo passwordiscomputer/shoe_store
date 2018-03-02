@@ -1,0 +1,33 @@
+<div class="top main-content row">
+  <h1><%= @store.name %></h1>
+</div>
+
+<div class="main-content">
+  <div class="row">
+    <div id="" class="col-xs-5 col-xs-offset-1">
+      <div class="well">
+        <h3>Inventory</h3>
+        <ul>
+          <% @store.brands.each do |brand| %>
+            <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div id="" class="col-xs-5">
+      <div class="well">
+        <h3>Order Brand</h3>
+        <form action="/stores/<%= @store.id %>" method="post">
+          <div class="form-group">
+            <% @brands.each() do |brand| %>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="brand_ids[]" value="<%= brand.id() %>"><%= brand.name%>
+                </label>
+              </div>
+            <% end %>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
