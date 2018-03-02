@@ -10,4 +10,8 @@ describe('Brand') do
     brand.update(price: 100)
     expect(brand.price).to(eq(100))
   end
+  it("ensures the brand name is not blank") do
+    brand = Brand.new({:name => ""})
+    expect(brand.save()).to(eq(false))
+  end
 end
