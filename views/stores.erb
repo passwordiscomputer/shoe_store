@@ -1,0 +1,16 @@
+<div class=" main-content row">
+  <h1>STORES</h1>
+</div>
+
+<div class="row">
+<div class="col-xs-10 col-xs-offset-1">
+    <div class="well">
+      <h3>locations</h3>
+        <ul>
+          <% @stores.each do |store| %>
+            <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>

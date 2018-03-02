@@ -72,3 +72,8 @@ h2 {
 input{
   margin: 4px;
 }
+
+.form-control {
+  background-color: #FCFCFC;
+  border: 1px solid #FCFCFC;
+}

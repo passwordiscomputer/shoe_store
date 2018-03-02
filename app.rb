@@ -49,7 +49,9 @@ binding.pry
 end
 ##Store##
 post('/add_store')do
-  if Store.create(params)
+
+  if Store.create({:name => params[:name]})
+    Store.create({:name => params[:name]})
     redirect('/')
   else
     erb(:error)
