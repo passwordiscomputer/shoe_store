@@ -81,3 +81,7 @@ input{
 .top h3{
   color: #CFC7CA;
 }
+
+.well h3{
+  text-decoration: underline;
+}
