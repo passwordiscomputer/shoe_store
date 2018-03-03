@@ -86,3 +86,10 @@ post('/stores/:id')do
   @link = "/stores/#{@store.id}"
   redirect(@link)
 end
+
+delete('/stores/:id')do
+  @store = Store.find(params[:id])
+  @store.brands.destroy(params[:delete_id])
+  @link = "/stores/#{@store.id}"
+  redirect(@link)
+end

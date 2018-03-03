@@ -71,8 +71,13 @@ h2 {
 
 input{
   margin: 4px;
+  background-color: rgba(207,199,202,0.5) !important;
+  border-color: rgba(207,199,202,0.1) !important;
 }
 
+input::placeholder{
+  color: #1F292B !important;
+}
 .form-control {
   background-color: #FCFCFC;
   border: 1px solid #FCFCFC;
@@ -84,4 +89,23 @@ input{
 
 .well h3{
   text-decoration: underline;
+}
+
+button{
+  background-color: #CFC7CA !important;
+  border-color: rgba(207,199,202,0.1) !important;
+  background-color: rgba(207,199,202,0.8) !important;
+}
+
+.btn{
+  font: 'Montserrat', sans-serif !important;
+  font-weight: bolder !important;
+  height: 20% !important;
+  padding:3px;
+
+}
+
+li a,form{
+  display: inline-block;
+  margin-bottom: 3px;
 }
