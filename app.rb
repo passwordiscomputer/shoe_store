@@ -43,7 +43,6 @@ end
 #######ADD TO LISTS############
 ##brand##
 post('/add_brand')do
-binding.pry
   if Brand.create({:name => params[:name], :price => params[:price]})
     Brand.create({:name => params[:name], :price => params[:price]})
     redirect('/')
