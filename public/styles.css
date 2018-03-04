@@ -55,7 +55,7 @@ h2 {
 }
 
 .well {
-  background-color: rgba(207,199,202,0.4);
+  background-color: rgba(207,199,202,0.7);
   border: none;
   text-align: center;
 }
@@ -71,8 +71,8 @@ h2 {
 
 input{
   margin: 4px;
-  background-color: rgba(207,199,202,0.5) !important;
-  border-color: rgba(207,199,202,0.1) !important;
+  background-color: rgba(207,199,202,0.8) !important;
+  border: none !important;
 }
 
 input::placeholder{
@@ -102,7 +102,9 @@ button{
   font-weight: bolder !important;
   height: 20% !important;
   padding:3px;
-
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 15px;
 }
 
 li a,form{
