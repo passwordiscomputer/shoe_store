@@ -1,37 +1,15 @@
 # Project Tracker
 
-#### _By Maggie Summers & Chase Bowden_
+#### _By Chase Bowden_
 
 #### _An application for adding employees and projects to a database. 2-27-18_
 
 ## Description
 
-_This app allows a user to add, update and delete employees and projects to a database. They can then assign employees to projects, and projects to employees._
+_This app allows a user to add stores and brands to a database for a shoe company.
 
-### Specifications
-    1. Allows new projects to a list
-      * _Example input - "Add: Plant trees"_
-      * _Example output - "Projects: Plant trees"_
-
-    2. Allows user to view projects
-      * _Example input - "View: Projects"_
-      * _Example output - "Projects : Plant trees"_
-
-    3. Allows user to update projects
-      * _Example input - "Update: Plant trees to Clean highway"_
-      * _Example output - "Projects: Clean highway"_
-
-    4. Allows user to delete projects
-      * _Example input - "Delete: Plant trees "_
-      * _Example output - "Projects: " " "_
-
-    5. Allows user to add employee to project
-      * _Example input - "Add: Adam "_
-      * _Example output - "Projects: Clean Highway Volunteer: Adam"_
-
-    6. Allows user to add project to employee
-      * _Example input - "Add: Adam "_
-      * _Example output - "Projects: Clean Highway Volunteer: Adam"_
+Specifications
+Users are able to add shoe brands and stores on the home page then go to the shoe page to see all available brands and to the store page so see inventory and order shoes to a store or delete them from the database.
 
 ## Install the DATABASE instructions
 
@@ -65,4 +43,4 @@ _This app allows a user to add, update and delete employees and projects to a da
 
   *MIT License*
 
-Copyright (c) 2018 **_Maggie Summers, Chase Bowden_**
+Anyone anwhere anytime is allowed to use this technology however they like. :)
